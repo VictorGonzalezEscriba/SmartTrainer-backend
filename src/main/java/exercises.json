@@ -1,0 +1,283 @@
+{
+  "exercises": [
+    {
+      "id": 0,
+      "name": "Aperturas",
+      "location": 1,
+      "bodyPart1": 0,
+      "bodyPart2": "Pectoral",
+      "bodyPart3": "Pectoral",
+      "link": "https://www.youtube.com/watch?v=xyHdY99F640"
+    },
+    {
+      "id": 1,
+      "name": "Crunch",
+      "location": 1,
+      "bodyPart1": 0,
+      "bodyPart2": "Abdomen",
+      "bodyPart3": "Abdomen",
+      "link": "https://www.youtube.com/watch?v=_YVhhXc2pSY"
+    },
+    {
+      "id": 2,
+      "name": "Curl de bíceps",
+      "location": 0,
+      "bodyPart1": 0,
+      "bodyPart2": "Brazo",
+      "bodyPart3": "Bíceps",
+      "link": "https://www.youtube.com/watch?v=Nkl8WnH6tDU"
+    },
+    {
+      "id": 3,
+      "name": "Curl de bíceps martillo",
+      "location": 0,
+      "bodyPart1": 0,
+      "bodyPart2": "Brazo",
+      "bodyPart3": "Bíceps",
+      "link": "https://www.youtube.com/watch?v=P5sXHLmXmBM"
+    },
+    {
+      "id": 4,
+      "name": "Elevación frontal",
+      "location": 0,
+      "bodyPart1": 0,
+      "bodyPart2": "Brazo",
+      "bodyPart3": "Hombro",
+      "link": "https://www.youtube.com/watch?v=9lb3-mp4_zQ"
+    },
+    {
+      "id": 5,
+      "name": "Elevación lateral",
+      "location": 0,
+      "bodyPart1": 0,
+      "bodyPart2": "Brazo",
+      "bodyPart3": "Hombro",
+      "link": "https://www.youtube.com/watch?v=wZnsZsMywrY"
+    },
+    {
+      "id": 6,
+      "name": "Encogimiento de hombros",
+      "location": 1,
+      "bodyPart1": 0,
+      "bodyPart2": "Trapecio",
+      "bodyPart3": "Trapecio",
+      "link": "https://www.youtube.com/watch?v=pee2mPdeRLg"
+    },
+    {
+      "id": 7,
+      "name": "Extensión de lumbar",
+      "location": 1,
+      "bodyPart1": 0,
+      "bodyPart2": "Espalda",
+      "bodyPart3": "Lumbar",
+      "link": "https://www.youtube.com/watch?v=2own0y59cQ4"
+    },
+    {
+      "id": 8,
+      "name": "Extensión de triceps",
+      "location": 0,
+      "bodyPart1": 0,
+      "bodyPart2": "Brazo",
+      "bodyPart3": "Tríceps",
+      "link": "https://www.youtube.com/watch?v=w10jL0zCueg"
+    },
+    {
+      "id": 9,
+      "name": "Flexiones",
+      "location": 1,
+      "bodyPart1": 0,
+      "bodyPart2": "Pectoral",
+      "bodyPart3": "Pectoral",
+      "link": "https://www.youtube.com/watch?v=_l3ySVKYVJ8"
+    },
+    {
+      "id": 10,
+      "name": "Flexiones declinadas",
+      "location": 1,
+      "bodyPart1": 0,
+      "bodyPart2": "Pectoral",
+      "bodyPart3": "Pectoral",
+      "link": "https://www.youtube.com/watch?v=5QFjmotLfW4"
+    },
+    {
+      "id": 11,
+      "name": "Flexiones inclinadas",
+      "location": 1,
+      "bodyPart1": 0,
+      "bodyPart2": "Pectoral",
+      "bodyPart3": "Pectoral",
+      "link": "https://www.youtube.com/watch?v=Me9bHFAxnCs"
+    },
+    {
+      "id": 12,
+      "name": "Flexión de hombro",
+      "location": 1,
+      "bodyPart1": 0,
+      "bodyPart2": "Brazo",
+      "bodyPart3": "Hombro",
+      "link": "https://www.youtube.com/watch?v=gwYDZJW5SLw"
+    },
+    {
+      "id": 13,
+      "name": "Flexión de triceps",
+      "location": 1,
+      "bodyPart1": 0,
+      "bodyPart2": "Brazo",
+      "bodyPart3": "Tríceps",
+      "link": "https://www.youtube.com/watch?v=kZi0j-7rDe8"
+    },
+    {
+      "id": 14,
+      "name": "Fondos",
+      "location": 1,
+      "bodyPart1": 0,
+      "bodyPart2": "Brazo",
+      "bodyPart3": "Tríceps",
+      "link": "https://www.youtube.com/watch?v=o2qX3Zb5mvg"
+    },
+    {
+      "id": 15,
+      "name": "Hip thrust",
+      "location": 1,
+      "bodyPart1": 1,
+      "bodyPart2": "Pierna",
+      "bodyPart3": "Gluteos",
+      "link": "https://www.youtube.com/watch?v=DA-30WGg5LA"
+    },
+    {
+      "id": 16,
+      "name": "Jalón al pecho",
+      "location": 0,
+      "bodyPart1": 0,
+      "bodyPart2": "Espalda",
+      "bodyPart3": "Dorsal",
+      "link": "https://www.youtube.com/watch?v=_qnUsTQAnOQ"
+    },
+    {
+      "id": 17,
+      "name": "Peso muerto",
+      "location": 0,
+      "bodyPart1": 1,
+      "bodyPart2": "Pierna",
+      "bodyPart3": "Bíceps Femoral",
+      "link": "https://www.youtube.com/watch?v=op9kVnSso6Q"
+    },
+    {
+      "id": 18,
+      "name": "Peso muerto rumano",
+      "location": 1,
+      "bodyPart1": 1,
+      "bodyPart2": "Pierna",
+      "bodyPart3": "Bíceps femoral",
+      "link": "https://www.youtube.com/watch?v=7j-2w4-P14I"
+    },
+    {
+      "id": 19,
+      "name": "Plancha",
+      "location": 1,
+      "bodyPart1": 0,
+      "bodyPart2": "Abdomen",
+      "bodyPart3": "Abdomen",
+      "link": "https://www.youtube.com/watch?v=sZxrs3C209k"
+    },
+    {
+      "id": 20,
+      "name": "Plancha estrella",
+      "location": 1,
+      "bodyPart1": 0,
+      "bodyPart2": "Abdomen",
+      "bodyPart3": "Abdomen",
+      "link": "https://www.youtube.com/watch?v=V8z8A2WwNnA"
+    },
+    {
+      "id": 21,
+      "name": "Plancha lateral",
+      "location": 1,
+      "bodyPart1": 0,
+      "bodyPart2": "Abdomen",
+      "bodyPart3": "Abdomen",
+      "link": "https://www.youtube.com/watch?v=IkMmABQ9SkM"
+    },
+    {
+      "id": 22,
+      "name": "Press banca",
+      "location": 0,
+      "bodyPart1": 0,
+      "bodyPart2": "Pectoral",
+      "bodyPart3": "Pectoral",
+      "link": "https://www.youtube.com/watch?v=SCVCLChPQFY"
+    },
+    {
+      "id": 23,
+      "name": "Press declinado",
+      "location": 0,
+      "bodyPart1": 0,
+      "bodyPart2": "Pectoral",
+      "bodyPart3": "Pectoral",
+      "link": "https://www.youtube.com/watch?v=Pf1nDoqx_1A"
+    },
+    {
+      "id": 24,
+      "name": "Press francés",
+      "location": 0,
+      "bodyPart1": 0,
+      "bodyPart2": "Brazo",
+      "bodyPart3": "Tríceps",
+      "link": "https://www.youtube.com/watch?v=wfFuClSLcME"
+    },
+    {
+      "id": 25,
+      "name": "Press inclinado",
+      "location": 0,
+      "bodyPart1": 0,
+      "bodyPart2": "Pectoral",
+      "bodyPart3": "Pectoral",
+      "link": "https://www.youtube.com/watch?v=7UB2HQg5FNY"
+    },
+    {
+      "id": 26,
+      "name": "Press inclinado",
+      "location": 0,
+      "bodyPart1": 0,
+      "bodyPart2": "Pectoral",
+      "bodyPart3": "Pectoral",
+      "link": "https://www.youtube.com/watch?v=7UB2HQg5FNY"
+    },
+    {
+      "id": 27,
+      "name": "Remo en polea baja",
+      "location": 0,
+      "bodyPart1": 0,
+      "bodyPart2": "Espalda",
+      "bodyPart3": "Espalda media",
+      "link": "https://www.youtube.com/watch?v=rK6gu3J1NJA"
+    },
+    {
+      "id": 28,
+      "name": "Sentadilla",
+      "location": 1,
+      "bodyPart1": 1,
+      "bodyPart2": "Pierna",
+      "bodyPart3": "Cuádriceps",
+      "link": "https://www.youtube.com/watch?v=ultWZbUMPL8"
+    },
+    {
+      "id": 29,
+      "name": "Sentadilla búlgara",
+      "location": 1,
+      "bodyPart1": 1,
+      "bodyPart2": "Pierna",
+      "bodyPart3": "Cuádriceps",
+      "link": "https://www.youtube.com/watch?v=BMJsgyI_g0s"
+    },
+    {
+      "id": 30,
+      "name":  "Zancada",
+      "location": 1,
+      "bodyPart1": 1,
+      "bodyPart2": "Pierna",
+      "bodyPart3": "Cuádriceps",
+      "link": "https://www.youtube.com/watch?v=BMJsgyI_g0s"
+    }
+  ]
+}

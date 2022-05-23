@@ -1,0 +1,81 @@
+@startuml
+left to right direction
+class Exercise {
++m_id
++m_name
++m_location
++m_bodyPart1
++m_bodyPart2
++m_bodyPart3
++m_exampleLink
++m_weight
++m_series
++m_repes
++addDetails()
++showExercise()
+}
+
+class Training{
++m_id
++m_name
++m_type
++m_exercises
++m_nExercises
++m_date
++showDetails()
++addDetailsExercise()
++addExercise()
++addExerciseRead()
++deleteExercise()
++changeName()
++changeDate()
+}
+
+class ReadFile{
++m_listTrainings
++m_origin
++readTrainings()
++createTrainings()
++createExercises()
++editTraining()
+}
+
+class CreateFile{
++m_filePath
++m_mapper
++m_object
++m_trainings
++addTraining()
+}
+
+class Creator{
++m_catalog
++createTraining()
+}
+
+class Catalog{
++m_listExercises
++readExercises()
++createExercises()
++getExercise()
++showExercises()
++checkFilter()
++filterPart1()
++filterPart2()
++filterPart3()
++showFilterList()
+}
+
+class IdGenerator{
++m_listIds
++generateId()
+}
+
+Exercise "N" o-- "N" Training
+Catalog "1" -- "1" Creator
+Catalog "1" -- "N" Exercise
+Training "1" -- "1" Catalog
+ReadFile "1" -- "1" Training
+IdGenerator "1" -- "1" Training
+CreateFile "1" -- "1" Training
+@enduml
