@@ -49,7 +49,7 @@ public class Creator {
         t.changeDate(Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH) + 1, Calendar.getInstance().get(Calendar.DATE));
         Random rand = new Random();
         // Filtro por location = 0 gym 1 casa
-        List<Exercise> list = this.m_catalog.filerLocation(location);
+        List<Exercise> list = this.m_catalog.filterLocation(location);
         // Gym
         if (location == 0) {
             fillCatalog(type);

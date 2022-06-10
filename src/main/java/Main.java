@@ -1,5 +1,13 @@
+import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
+import com.google.cloud.firestore.*;
+import com.google.cloud.firestore.v1.*;
+import com.google.firebase.*;
+import com.google.firebase.auth.*;
 import org.json.JSONException;
 import org.json.simple.parser.ParseException;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.File;
 import java.nio.file.Files;
@@ -7,11 +15,12 @@ import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
 
 public class Main {
-    public static void main(String[] args) throws JSONException, IOException, ParseException, InterruptedException {
+    public static void main(String[] args) throws JSONException, IOException, ParseException, InterruptedException, ExecutionException {
         //filterTest();
         //trainingsTest();
         //editTrainingTest();
@@ -25,6 +34,7 @@ public class Main {
         //decimalTest();
         //getTrainingRawTest();
         //dateFormatTest();
+        postTest();
     }
 
     // This test is used to see if the filter method works properly
@@ -287,8 +297,33 @@ public class Main {
 
     public static void dateFormatTest(){
         LocalDateTime myDateObj = LocalDateTime.now();
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("HHmmss");
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("HHmmssSS");
         String formattedDate = myDateObj.format(myFormatObj);
         System.out.println(formattedDate);
+    }
+
+    public static void postTest() throws IOException, ParseException, ExecutionException, InterruptedException {
+        // training
+        CreateFile cf = new CreateFile();
+        ReadFile rf = new ReadFile();
+        Catalog c = new Catalog();
+        Training t = new Training("test", 1);
+        t.changeDate(2022, 05, 22);
+        for (int i = 0; i<2; i++){
+            t.addExercise(c.getExerciseList().get(i));
+        }
+        /////////////////
+        cf.createTrainingFile();
+        cf.addTraining2(t);
+        String training = rf.getTrainingRaw();
+        Files.deleteIfExists(Paths.get("./src/training_help.json"));
+        Firebase fb = new Firebase();
+
+        // id
+        LocalDateTime myDateObj = LocalDateTime.now();
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("HHmmssSS");
+        String formattedDate = myDateObj.format(myFormatObj);
+
+        fb.addTraining(formattedDate, training);
     }
 }

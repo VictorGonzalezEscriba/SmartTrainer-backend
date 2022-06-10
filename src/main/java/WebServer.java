@@ -257,7 +257,7 @@ public class WebServer {
                     String training = "";
                     // La fecha del momento en que se comparte para
                     LocalDateTime myDateObj = LocalDateTime.now();
-                    DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("HHmmss");
+                    DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("HHmmssSS");
                     String formattedDate = myDateObj.format(myFormatObj);
 
                     int trainingId = Integer.parseInt(tokens[1]);

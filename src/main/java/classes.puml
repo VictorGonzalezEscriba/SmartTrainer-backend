@@ -11,6 +11,7 @@ class Exercise {
 +m_weight
 +m_series
 +m_repes
+
 +addDetails()
 +showExercise()
 }
@@ -22,6 +23,7 @@ class Training{
 +m_exercises
 +m_nExercises
 +m_date
+
 +showDetails()
 +addDetailsExercise()
 +addExercise()
@@ -29,14 +31,19 @@ class Training{
 +deleteExercise()
 +changeName()
 +changeDate()
++convertDate()
++readDate()
 }
 
 class ReadFile{
 +m_listTrainings
-+m_origin
+
 +readTrainings()
++getTrainingRaw()
++getJSONRaw()
++getExercisesRaw()
 +createTrainings()
-+createExercises()
++createExercise()
 +editTraining()
 }
 
@@ -46,29 +53,45 @@ class CreateFile{
 +m_object
 +m_trainings
 +addTraining()
++addTraining2()
++refresh()
++writeEmpty()
 }
 
 class Creator{
 +m_catalog
+
++fillCatalog()
 +createTraining()
 }
 
 class Catalog{
 +m_listExercises
+
 +readExercises()
 +createExercises()
 +getExercise()
-+showExercises()
 +checkFilter()
 +filterPart1()
 +filterPart2()
 +filterPart3()
++filterLocation()
 +showFilterList()
 }
 
 class IdGenerator{
 +m_listIds
 +generateId()
+}
+
+class WebServer{
++m_cr
++m_cf
++m_rf
++makeBodyAnswer()
++makeHeaderAnswer()
++correctName()
++fillExercises()
 }
 
 Exercise "N" o-- "N" Training

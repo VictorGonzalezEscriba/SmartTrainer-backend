@@ -72,30 +72,6 @@ public class Exercise {
         this.m_id = id;
     }
 
-    public void setName(String name) {
-        this.m_name = name;
-    }
-
-    public void setLocation(int location){
-        this.m_location = location;
-    }
-
-    public void setBodyPart1(int bodyPart1) {
-        this.m_bodyPart1 = bodyPart1;
-    }
-
-    public void setBodyPart2(String bodyPart2){
-        this.m_bodyPart2 = bodyPart2;
-    }
-
-    public void setBodyPart3(String bodyPart3){
-        this.m_bodyPart3 = bodyPart3;
-    }
-
-    public void setLink(String exampleLink){
-        this.m_exampleLink = exampleLink;
-    }
-
     public void setWeight(int weight){
         this.m_weight = weight;
     }

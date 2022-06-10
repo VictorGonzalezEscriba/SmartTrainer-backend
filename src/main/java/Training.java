@@ -1,15 +1,6 @@
-import java.io.File;
-import java.io.FileWriter;
 import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
-import java.io.*;
-import org.json.*;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.json.simple.parser.JSONParser;
 
 public class Training {
 
@@ -43,10 +34,6 @@ public class Training {
 
     public int getNExercises(){
         return this.m_nExercises;
-    }
-
-    public Calendar getDate(){
-        return this.m_date;
     }
 
     public List<Exercise> getExercises(){
@@ -109,11 +96,6 @@ public class Training {
     }
 
     public String getPrintDate() {return this.m_printDate;}
-
-    // To delete a given exercise
-    public void deleteExercise(int exercise_id){
-        this.m_exercises.removeIf(ex -> ex.getId() == exercise_id);
-    }
 
     // Method to change the name of the training
     public void changeName(String name){

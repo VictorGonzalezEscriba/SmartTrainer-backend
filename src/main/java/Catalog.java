@@ -106,7 +106,7 @@ public class Catalog {
         return filterList;
     }
 
-    public List<Exercise> filerLocation(int location) {
+    public List<Exercise> filterLocation(int location) {
         List<Exercise> filter = new LinkedList<>();
         if (location == 1){
             for (Exercise e : this.m_listExercises){

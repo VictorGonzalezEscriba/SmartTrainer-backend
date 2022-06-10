@@ -78,7 +78,6 @@ public class CreateFile {
         }
     }
 
-
     public void addTraining(Training t) throws JSONException{
         JSONObject newTraining = new JSONObject();
         newTraining.put("tName", t.getName());
