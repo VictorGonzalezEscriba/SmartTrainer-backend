@@ -32,8 +32,8 @@ public class Main {
         //jsonExerciseRawTest();
         //spaceTest();
         //decimalTest();
-        //getTrainingRawTest();
-        //dateFormatTest();
+        getTrainingRawTest();
+        dateFormatTest();
     }
 
     // This test is used to see if the filter method works properly

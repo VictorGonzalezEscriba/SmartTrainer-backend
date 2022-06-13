@@ -268,6 +268,13 @@ public class WebServer {
                             training = rf.getTrainingRaw();
                         }
                     }
+                    if (!Objects.equals(training, "")){
+                        body = formattedDate + "---" + training;
+                        System.out.println(body);
+                    }
+                    else {
+                        body = "";
+                    }
                     break;
                 }
 
