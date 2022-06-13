@@ -34,7 +34,6 @@ public class Main {
         //decimalTest();
         //getTrainingRawTest();
         //dateFormatTest();
-        postTest();
     }
 
     // This test is used to see if the filter method works properly
@@ -300,30 +299,5 @@ public class Main {
         DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("HHmmssSS");
         String formattedDate = myDateObj.format(myFormatObj);
         System.out.println(formattedDate);
-    }
-
-    public static void postTest() throws IOException, ParseException, ExecutionException, InterruptedException {
-        // training
-        CreateFile cf = new CreateFile();
-        ReadFile rf = new ReadFile();
-        Catalog c = new Catalog();
-        Training t = new Training("test", 1);
-        t.changeDate(2022, 05, 22);
-        for (int i = 0; i<2; i++){
-            t.addExercise(c.getExerciseList().get(i));
-        }
-        /////////////////
-        cf.createTrainingFile();
-        cf.addTraining2(t);
-        String training = rf.getTrainingRaw();
-        Files.deleteIfExists(Paths.get("./src/training_help.json"));
-        Firebase fb = new Firebase();
-
-        // id
-        LocalDateTime myDateObj = LocalDateTime.now();
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("HHmmssSS");
-        String formattedDate = myDateObj.format(myFormatObj);
-
-        fb.addTraining(formattedDate, training);
     }
 }
