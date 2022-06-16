@@ -1,7 +1,12 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
+import jdk.dynalink.StandardNamespace;
 import org.json.simple.parser.ParseException;
 import java.io.*;
 import java.net.ServerSocket;
+import java.net.URLDecoder;
 import java.net.Socket;
+import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -15,6 +20,7 @@ public class WebServer {
     Creator cr= new Creator();
     CreateFile cf = new CreateFile();
     ReadFile rf = new ReadFile();
+    ObjectMapper m_mapper = new ObjectMapper();
 
     public WebServer() throws IOException, ParseException {
 
@@ -44,6 +50,14 @@ public class WebServer {
             this.start();
         }
 
+        public static String decodeValue(String string){
+            try{
+                return URLDecoder.decode(string, StandardCharsets.UTF_8.toString());
+            }catch(UnsupportedEncodingException ex) {
+                throw new RuntimeException(ex.getCause());
+            }
+        }
+
         @Override
         public void run() {
             // we manage our particular client connection
@@ -53,7 +67,7 @@ public class WebServer {
 
             try {
                 // we read characters from the client via input stream on the socket
-                in = new BufferedReader(new InputStreamReader(insocked.getInputStream()));
+                in = new BufferedReader(new InputStreamReader(insocked.getInputStream(), StandardCharsets.UTF_8));
                 // we get character output stream to client
                 out = new PrintWriter(insocked.getOutputStream());
                 // get first line of the request from the client
@@ -73,17 +87,27 @@ public class WebServer {
                     System.out.println("input " + input);
                     System.out.println("method " + method);
                     System.out.println("resource " + resource);
-
-                    parse = new StringTokenizer(resource, "/[?]=&");
-                    int i = 0;
                     String[] tokens = new String[20];
-                    // more than the actual number of parameters
-                    while (parse.hasMoreTokens()) {
-                        tokens[i] = parse.nextToken();
-                        System.out.println("token " + i + "=" + tokens[i]);
-                        i++;
-                    }
+                    if (resource.startsWith("/import")){
+                        // extract the  query
+                        String url = resource.replace("/import?", "");
+                        String finalString = decodeValue(url);
+                        System.out.println("//////////////////////////////////////////////////");
+                        System.out.println("Final String: " + finalString);
 
+                        tokens[0] = "import";
+                        tokens[1] = finalString;
+                    }
+                    else{
+                        parse = new StringTokenizer(resource, "/[?]=&");
+                        int i = 0;
+                        // more than the actual number of parameters
+                        while (parse.hasMoreTokens()) {
+                            tokens[i] = parse.nextToken();
+                            System.out.println("token " + i + "=" + tokens[i]);
+                            i++;
+                        }
+                    }
                     // Make the answer as a JSON string, to be sent to the Javascript client
                     String answer = makeHeaderAnswer() + makeBodyAnswer(tokens);
                     System.out.println("answer\n" + answer);
@@ -103,6 +127,7 @@ public class WebServer {
 
         private String makeBodyAnswer(String[] tokens) throws IOException, ParseException {
             String body = "";
+            ObjectMapper m_mapper = new ObjectMapper();
             // aqui la array tokens tiene en formato string los parametros de la solicitud del front-end
             // token[0] tiene el nombre de la peticion
             switch (tokens[0]) {
@@ -280,14 +305,34 @@ public class WebServer {
 
                 case "import": {
                     // Codigo que el usuario introducirá
-                    String code = tokens[1];
+                    String training = tokens[1];
+                    try {
+                        FileWriter file = new FileWriter("./src/main/java/training_help.json", false);
+                        //We can write any JSONArray or JSONObject instance to the file
+                        file.write(m_mapper.writerWithDefaultPrettyPrinter().writeValueAsString(m_mapper.readTree(training)));
+                        file.flush();
+                        // the imported training
+                        rf.getImportedTraining();
 
-
+                        cf.refresh();
+                        IdGenerator idGenerator = new IdGenerator();
+                        for (Training t : rf.getM_listTrainings()){
+                            t.setId(idGenerator.generateId());
+                            cf.addTraining(t);
+                        }
+                        Training importedTraining = rf.getImportedTraining();
+                        importedTraining.setId(idGenerator.generateId());
+                        cf.addTraining(importedTraining);
+                        file.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
 
                    break;
                 }
 
                 default:
+                    System.out.println("Default");
                     assert false;
             }
 

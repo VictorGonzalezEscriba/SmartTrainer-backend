@@ -1,6 +1,5 @@
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.nio.file.*;
 import java.util.List;
 import java.io.FileReader;
 import java.util.*;
@@ -60,6 +59,22 @@ public class ReadFile {
         return data;
     }
 
+    public Training getImportedTraining() {
+        try {
+            JSONParser jsonParser = new JSONParser();
+            try (FileReader reader = new FileReader("./src/main/java/training_help.json")){
+                Object obj = jsonParser.parse(reader);
+                JSONObject tobj = (JSONObject) obj;
+                return createTrainings2(tobj);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }catch (Exception e2){
+            e2.printStackTrace();
+        }
+        return null;
+    }
+
     public String getJSONRaw() {
         String data = "";
         try {
@@ -96,6 +111,24 @@ public class ReadFile {
             e.printStackTrace();
         }
         return data;
+    }
+
+    public Training createTrainings2(JSONObject training) {
+        String trainingName = (String) training.get("tName");
+        Long idL = (Long) training.get("tId");
+        int id = idL.intValue();
+        Long i = (Long) training.get("nExercises");
+        int nExercises = i.intValue();
+        Long typeL = (Long) training.get("type");
+        int type = typeL.intValue();
+        Training tr = new Training(trainingName, type);
+        tr.setNExercises(nExercises);
+        tr.setId(id);
+        String date = (String) training.get("date");
+        tr.readDate(date);
+        JSONArray exercisesList = (JSONArray) training.get("exercises");
+        exercisesList.forEach(ex -> createExercise( (JSONObject) ex,  tr));
+        return tr;
     }
 
     public void createTrainings(JSONObject training) {
