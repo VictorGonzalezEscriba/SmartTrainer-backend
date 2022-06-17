@@ -367,7 +367,7 @@ public class WebServer {
         Catalog c = new Catalog();
         String[] parts = ids.split("-");
         for(String id : parts){
-            exercises.add(c.findExercise(Integer.parseInt(id)));
+            exercises.add(c.getExercise(Integer.parseInt(id)));
         }
         return exercises;
     }

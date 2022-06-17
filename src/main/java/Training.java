@@ -55,7 +55,7 @@ public class Training {
         }
     }
 
-    public void addDetailsExercise(int id, int weight, int series, int repes) {
+    public void addDetailsExercise(int id, double weight, int series, int repes) {
         for (Exercise ex : this.m_exercises){
             if (ex.getId() == id) {
                 ex.setWeight(weight);

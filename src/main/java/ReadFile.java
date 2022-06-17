@@ -22,7 +22,6 @@ public class ReadFile {
         }
     }
 
-
     public void readTrainings() {
         try {
             JSONParser jsonParser = new JSONParser();

@@ -45,16 +45,7 @@ public class Catalog {
         this.m_listExercises.add(e);
     }
 
-    public Exercise getExercise(int id){
-        if ((id >= 0) && (id <=this.m_listExercises.size())){
-            for (Exercise e : this.m_listExercises) {
-                if (e.getId() == id){
-                    return e;
-                }
-            }
-        }
-        return null;
-    }
+
 
     public List<Exercise> checkFilter(String f, List<Exercise> list){
         // if is an integer we are looking for bodyPart1
@@ -131,10 +122,12 @@ public class Catalog {
         return this.m_listExercises;
     }
 
-    Exercise findExercise(int id){
-        for (Exercise ex : this.m_listExercises){
-            if (ex.getId() == id){
-                return ex;
+    public Exercise getExercise(int id){
+        if ((id >= 0) && (id <=this.m_listExercises.size())){
+            for (Exercise e : this.m_listExercises) {
+                if (e.getId() == id){
+                    return e;
+                }
             }
         }
         return null;

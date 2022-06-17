@@ -11,6 +11,8 @@ public class Creator {
         // m_catalog.showExercises();
     }
 
+    public Catalog getM_catalog(){return this.m_catalog;}
+
     // Esta función será utlitizada si el entrenamiento se hace en el gym
     public void fillCatalog(int type){
         int series;

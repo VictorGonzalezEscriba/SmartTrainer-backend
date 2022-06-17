@@ -72,7 +72,7 @@ public class Exercise {
         this.m_id = id;
     }
 
-    public void setWeight(int weight){
+    public void setWeight(double weight){
         this.m_weight = weight;
     }
 
