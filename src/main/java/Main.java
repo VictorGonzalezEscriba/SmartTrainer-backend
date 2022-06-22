@@ -20,20 +20,21 @@ import java.util.concurrent.TimeUnit;
 
 
 public class Main {
-    public static void main(String[] args) throws JSONException, IOException, ParseException, InterruptedException, ExecutionException {
-        //filterTest();
-        //trainingsTest();
-        //editTrainingTest();
-        //creatorTest();
-        //dateTest();
-        //jsonRawTest();
-        //manyTrainingsTest();
-        //exceptionTest();
-        //jsonExerciseRawTest();
-        //spaceTest();
-        //decimalTest();
-        getTrainingRawTest();
-        dateFormatTest();
+
+    public static void main(String[] args) throws JSONException, IOException, ParseException, InterruptedException {
+        // filterTest();
+        // trainingsTest();
+        // editTrainingTest();
+        // creatorTest();
+        // dateTest();
+        jsonRawTest();
+        // manyTrainingsTest();
+        // exceptionTest();
+        // jsonExerciseRawTest();
+        // spaceTest();
+        // decimalTest();
+        // getTrainingRawTest();
+        // dateFormatTest();
     }
 
     // This test is used to see if the filter method works properly
