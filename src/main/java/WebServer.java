@@ -240,8 +240,14 @@ public class WebServer {
                         if (t.getId() != trainingId){
                             cf.addTraining(t);
                         } else {
-                            // Entreno
-                            t.getExercises().removeIf(e -> e.getId() == exerciseId);
+                            for (Exercise e : t.getExercises()){
+                                System.out.println("Deleting");
+                                System.out.println(e.getWeight());
+                                if (e.getId() == exerciseId){
+                                    t.getExercises().remove(e);
+                                    cf.addTraining(t);
+                                }
+                            }
                             cf.addTraining(t);
                         }
                     }
@@ -250,14 +256,37 @@ public class WebServer {
 
                 case "add_exercises": {
                     int trainingId =  Integer.parseInt(tokens[1]);
+                    // Que no este vacia
                     if (!Objects.equals(tokens[2], "-1")){
                         List<Exercise> exercises = fillExercises(tokens[2]);
+                        List<Exercise> aux = new ArrayList<>();
                         cf.refresh();
                         for (Training t : rf.getM_listTrainings()){
                             if (t.getId() == trainingId){
+                                // Añadir los que se mantienen
+                                for (Exercise ex : t.getExercises()){
+                                    for (Exercise ex2 : exercises){
+                                        if (ex.getId() == ex2.getId()){
+                                            aux.add(ex);
+                                        }
+                                    }
+                                }
+                                // Mirar los nuevos
+                                for (Exercise ex : exercises){
+                                    boolean isNew = true;
+                                    for (Exercise ex2 : t.getExercises()){
+                                        if (ex.getId() == ex2.getId()) {
+                                            isNew = false;
+                                            break;
+                                        }
+                                    }
+                                    if (isNew){
+                                        aux.add(ex);
+                                    }
+                                }
                                 t.getExercises().clear();
                                 t.setNExercises(0);
-                                for (Exercise e : exercises){
+                                for (Exercise e : aux){
                                     t.addExercise(e);
                                 }
                             }
